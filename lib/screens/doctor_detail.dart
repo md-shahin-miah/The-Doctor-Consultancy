@@ -19,14 +19,14 @@ class SliverDoctorDetail extends StatelessWidget {
             title: Text('Detail Doctor'),
             backgroundColor: Color(MyColors.primary),
             expandedHeight: 200,
-            flexibleSpace: FlexibleSpaceBar(
+            flexibleSpace: const FlexibleSpaceBar(
               background: Image(
-                image: AssetImage('assets/hospital.jpeg'),
+                image: AssetImage('assets/hospital.jpg'),
                 fit: BoxFit.cover,
               ),
             ),
           ),
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: DetailBody(),
           )
         ],
@@ -262,7 +262,7 @@ class DetailDoctorCard extends StatelessWidget {
                 ),
               ),
               Image(
-                image: AssetImage('assets/doctor01.jpeg'),
+                image: AssetImage('assets/doctor01.jpg'),
                 width: 100,
               )
             ],

@@ -15,6 +15,7 @@ class Home extends StatefulWidget {
 List<Map> navigationBarItems = [
   {'icon': Icons.local_hospital, 'index': 0},
   {'icon': Icons.calendar_today, 'index': 1},
+  {'icon': Icons.person_outline, 'index': 1},
 ];
 
 class _HomeState extends State<Home> {
@@ -31,6 +32,7 @@ class _HomeState extends State<Home> {
       HomeTab(
         onPressedScheduleCard: goToSchedule,
       ),
+      ScheduleTab(),
       ScheduleTab(),
     ];
 

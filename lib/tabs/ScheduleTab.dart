@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import '../styles/colors.dart';
 import '../styles/styles.dart';
 
-
 class ScheduleTab extends StatefulWidget {
   const ScheduleTab({Key? key}) : super(key: key);
 
@@ -15,7 +14,39 @@ enum FilterStatus { Upcoming, Complete, Cancel }
 
 List<Map> schedules = [
   {
-    'img': 'assets/doctor01.jpeg',
+    'img': 'assets/doctor07.jpg',
+    'doctorName': 'Dr. Partha S. Barai',
+    'doctorTitle': 'Eye Specialist & Surgeon',
+    'reservedDate': 'Monday, Jul 29',
+    'reservedTime': '11:00 - 12:00',
+    'status': FilterStatus.Cancel
+  },
+  {
+    'img': 'assets/doctor08.jpg',
+    'doctorName': 'Dr. Nabila Khanduker',
+    'doctorTitle': ' Breast Cancer Surgeon',
+    'reservedDate': 'Monday, Jul 29',
+    'reservedTime': '11:00 - 12:00',
+    'status': FilterStatus.Cancel
+  },
+  {
+    'img': 'assets/doctor09.jpg',
+    'doctorName': 'Dr. Labony Kar',
+    'doctorTitle': 'Bone Specialist',
+    'reservedDate': 'Monday, Jul 29',
+    'reservedTime': '11:00 - 12:00',
+    'status': FilterStatus.Cancel
+  },
+  {
+    'img': 'assets/doctor10.jpg',
+    'doctorName': 'Dr. Samira Khan',
+    'doctorTitle': 'Cardiologist',
+    'reservedDate': 'Monday, Jul 29',
+    'reservedTime': '11:00 - 12:00',
+    'status': FilterStatus.Cancel
+  },
+  {
+    'img': 'assets/doctor01.jpg',
     'doctorName': 'Dr. Anastasya Syahid',
     'doctorTitle': 'Dental Specialist',
     'reservedDate': 'Monday, Aug 29',
@@ -23,7 +54,7 @@ List<Map> schedules = [
     'status': FilterStatus.Upcoming
   },
   {
-    'img': 'assets/doctor02.png',
+    'img': 'assets/doctor02.jpg',
     'doctorName': 'Dr. Mauldya Imran',
     'doctorTitle': 'Skin Specialist',
     'reservedDate': 'Monday, Sep 29',
@@ -31,7 +62,7 @@ List<Map> schedules = [
     'status': FilterStatus.Upcoming
   },
   {
-    'img': 'assets/doctor03.jpeg',
+    'img': 'assets/doctor03.jpg',
     'doctorName': 'Dr. Rihanna Garland',
     'doctorTitle': 'General Specialist',
     'reservedDate': 'Monday, Jul 29',
@@ -39,7 +70,7 @@ List<Map> schedules = [
     'status': FilterStatus.Upcoming
   },
   {
-    'img': 'assets/doctor04.jpeg',
+    'img': 'assets/doctor04.jpg',
     'doctorName': 'Dr. John Doe',
     'doctorTitle': 'Something Specialist',
     'reservedDate': 'Monday, Jul 29',
@@ -47,17 +78,17 @@ List<Map> schedules = [
     'status': FilterStatus.Complete
   },
   {
-    'img': 'assets/doctor05.jpeg',
-    'doctorName': 'Dr. Sam Smithh',
+    'img': 'assets/doctor05.jpg',
+    'doctorName': 'Dr. Sam Smith',
     'doctorTitle': 'Other Specialist',
     'reservedDate': 'Monday, Jul 29',
     'reservedTime': '11:00 - 12:00',
     'status': FilterStatus.Cancel
   },
   {
-    'img': 'assets/doctor05.jpeg',
-    'doctorName': 'Dr. Sam Smithh',
-    'doctorTitle': 'Other Specialist',
+    'img': 'assets/doctor06.png',
+    'doctorName': 'Dr. Md. Abdul Hakim',
+    'doctorTitle': 'Kidney Diseases & Medicine',
     'reservedDate': 'Monday, Jul 29',
     'reservedTime': '11:00 - 12:00',
     'status': FilterStatus.Cancel
@@ -76,7 +107,7 @@ class _ScheduleTabState extends State<ScheduleTab> {
 
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.only(left: 30, top: 30, right: 30),
+        padding: const EdgeInsets.only(left: 20, top: 30, right: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -85,7 +116,7 @@ class _ScheduleTabState extends State<ScheduleTab> {
               textAlign: TextAlign.center,
               style: kTitleStyle,
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Stack(
@@ -143,7 +174,7 @@ class _ScheduleTabState extends State<ScheduleTab> {
                     child: Center(
                       child: Text(
                         status.name,
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
                         ),
@@ -153,7 +184,7 @@ class _ScheduleTabState extends State<ScheduleTab> {
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Expanded(
@@ -163,8 +194,9 @@ class _ScheduleTabState extends State<ScheduleTab> {
                   var _schedule = filteredSchedules[index];
                   bool isLastElement = filteredSchedules.length + 1 == index;
                   return Card(
+                    elevation: 2,
                     margin: !isLastElement
-                        ? EdgeInsets.only(bottom: 20)
+                        ? EdgeInsets.only(bottom: 5,left:5 ,right: 5,top: 5)
                         : EdgeInsets.zero,
                     child: Padding(
                       padding: EdgeInsets.all(15),
@@ -176,7 +208,7 @@ class _ScheduleTabState extends State<ScheduleTab> {
                               CircleAvatar(
                                 backgroundImage: AssetImage(_schedule['img']),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 10,
                               ),
                               Column(
@@ -189,7 +221,7 @@ class _ScheduleTabState extends State<ScheduleTab> {
                                       fontWeight: FontWeight.w700,
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 5,
                                   ),
                                   Text(
@@ -204,11 +236,11 @@ class _ScheduleTabState extends State<ScheduleTab> {
                               ),
                             ],
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 15,
                           ),
                           DateTimeCard(),
-                          SizedBox(
+                          const SizedBox(
                             height: 15,
                           ),
                           Row(
@@ -216,16 +248,16 @@ class _ScheduleTabState extends State<ScheduleTab> {
                             children: [
                               Expanded(
                                 child: OutlinedButton(
-                                  child: Text('Cancel'),
+                                  child: const Text('Cancel'),
                                   onPressed: () {},
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 20,
                               ),
                               Expanded(
                                 child: ElevatedButton(
-                                  child: Text('Reschedule'),
+                                  child: const Text('Reschedule'),
                                   onPressed: () => {},
                                 ),
                               )

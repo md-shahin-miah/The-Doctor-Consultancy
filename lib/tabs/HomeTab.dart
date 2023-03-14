@@ -6,22 +6,22 @@ import '../styles/styles.dart';
 
 List<Map> doctors = [
   {
-    'img': 'assets/doctor02.png',
+    'img': 'assets/doctor02.jpg',
     'doctorName': 'Dr. Gardner Pearson',
-    'doctorTitle': 'Heart Specialist'
+    'doctorTitle': 'Gastro-Intestinal Specialist'
   },
   {
-    'img': 'assets/doctor03.jpeg',
+    'img': 'assets/doctor03.jpg',
     'doctorName': 'Dr. Rosa Williamson',
-    'doctorTitle': 'Skin Specialist'
+    'doctorTitle': 'Laparoscopic Specialist'
   },
   {
-    'img': 'assets/doctor02.png',
+    'img': 'assets/doctor09.jpg',
     'doctorName': 'Dr. Gardner Pearson',
     'doctorTitle': 'Heart Specialist'
   },
   {
-    'img': 'assets/doctor03.jpeg',
+    'img': 'assets/doctor08.jpg',
     'doctorName': 'Dr. Rosa Williamson',
     'doctorTitle': 'Skin Specialist'
   }
@@ -40,7 +40,7 @@ class HomeTab extends StatelessWidget {
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 30),
+        padding: EdgeInsets.symmetric(horizontal: 15),
         child: ListView(
           children: [
             const SizedBox(
@@ -123,7 +123,9 @@ class TopDoctorCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: EdgeInsets.only(bottom: 20),
+      elevation: 4,
+
+      margin: EdgeInsets.symmetric(horizontal: 10,vertical: 8),
       child: InkWell(
         onTap: () {
           Navigator.pushNamed(context, '/detail');
@@ -219,7 +221,7 @@ class AppointmentCard extends StatelessWidget {
                     Row(
                       children: [
                         const CircleAvatar(
-                          backgroundImage: AssetImage('assets/doctor01.jpeg'),
+                          backgroundImage: AssetImage('assets/doctor01.jpg'),
                         ),
                         const SizedBox(
                           width: 10,
@@ -420,7 +422,7 @@ class SearchInput extends StatelessWidget {
         color: Color(MyColors.bg),
         borderRadius: BorderRadius.circular(5),
       ),
-      padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+      padding: EdgeInsets.symmetric(vertical: 3, horizontal: 15),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -470,13 +472,13 @@ class UserIntro extends StatelessWidget {
               style: TextStyle(fontWeight: FontWeight.w500),
             ),
             Text(
-              'Brad King 👋',
+              'Shahin Miah👋',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
             ),
           ],
         ),
         const CircleAvatar(
-          backgroundImage: AssetImage('assets/person.jpeg'),
+          backgroundImage: AssetImage('assets/person.jpg'),
         )
       ],
     );
