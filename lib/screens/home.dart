@@ -1,8 +1,10 @@
+import 'package:doctor_appointment/screens/settings1.dart';
 import 'package:flutter/material.dart';
 
 import '../styles/colors.dart';
 import '../tabs/HomeTab.dart';
 import '../tabs/ScheduleTab.dart';
+import 'dash1.dart';
 
 
 class Home extends StatefulWidget {
@@ -15,7 +17,8 @@ class Home extends StatefulWidget {
 List<Map> navigationBarItems = [
   {'icon': Icons.local_hospital, 'index': 0},
   {'icon': Icons.calendar_today, 'index': 1},
-  {'icon': Icons.person_outline, 'index': 1},
+  {'icon': Icons.dashboard, 'index': 2},
+  {'icon': Icons.person, 'index': 3},
 ];
 
 class _HomeState extends State<Home> {
@@ -32,16 +35,17 @@ class _HomeState extends State<Home> {
       HomeTab(
         onPressedScheduleCard: goToSchedule,
       ),
-      ScheduleTab(),
-      ScheduleTab(),
+      const ScheduleTab(),
+      DashboardOnePage(),
+      SettingsOnePage(),
     ];
 
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color(MyColors.primary),
-        elevation: 0,
-        toolbarHeight: 0,
-      ),
+      // appBar: AppBar(
+      //   backgroundColor: Color(MyColors.primary),
+      //   elevation: 0,
+      //   toolbarHeight: 0,
+      // ),
       body: SafeArea(
         child: screens[_selectedIndex],
       ),
